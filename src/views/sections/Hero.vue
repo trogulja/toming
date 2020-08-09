@@ -2,7 +2,7 @@
   <section id="hero">
     <v-img
       :min-height="minHeight"
-      :src="require('@/assets/home-hero.jpg')"
+      :src="require('@/assets2/floor-plan-on-table-834892.jpg')"
       class="white--text"
       gradient="to right, rgba(5, 11, 31, .8), rgba(5, 11, 31, .8)"
     >
@@ -13,32 +13,29 @@
           max-width="700"
           width="100%"
         >
-          <base-heading title="PROMOTE YOUR BUSINESS WITH ZERO" />
+          <base-heading title="KVALITETAN MAJSTOR PO VAŠOJ MJERI" />
 
           <base-body>
-            Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality.
-            incubator seed round massmarket.
-            buyer agile development growth hacking business-to-consumer ecosystem
+            Od 1992. godine organiziramo i izvodimo adaptacije stambenih i
+            poslovnih prostora, uređujemo lokale u novogradnji, te radimo sve
+            vrste građevinskih, instalaterskih i završnih radova.
           </base-body>
 
           <div
-            :class="$vuetify.breakpoint.smAndDown ? 'flex-column align-start' : 'align-center'"
+            :class="
+              $vuetify.breakpoint.smAndDown
+                ? 'flex-column align-start'
+                : 'align-center'
+            "
             class="d-flex flex-wrap"
           >
-            <base-btn>
-              Discover More
-            </base-btn>
+            <base-btn>Discover More</base-btn>
 
             <span class="font-weight-bold ml-6 mr-4 my-4">or</span>
 
-            <base-btn
-              :ripple="false"
-              class="pa-1"
-              height="auto"
-              text
+            <base-btn :ripple="false" class="pa-1" height="auto" text
+              >Get Started Now</base-btn
             >
-              Get Started Now
-            </base-btn>
           </div>
         </v-responsive>
       </v-container>
@@ -47,19 +44,19 @@
 </template>
 
 <script>
-  export default {
-    name: 'SectionHero',
+export default {
+  name: 'SectionHero',
 
-    provide: {
-      theme: { isDark: true },
+  provide: {
+    theme: { isDark: true },
+  },
+
+  computed: {
+    minHeight() {
+      const height = this.$vuetify.breakpoint.mdAndUp ? '100vh' : '50vh';
+
+      return `calc(${height} - ${this.$vuetify.application.top}px)`;
     },
-
-    computed: {
-      minHeight () {
-        const height = this.$vuetify.breakpoint.mdAndUp ? '100vh' : '50vh'
-
-        return `calc(${height} - ${this.$vuetify.application.top}px)`
-      },
-    },
-  }
+  },
+};
 </script>

@@ -8,8 +8,8 @@
   export default {
     name: 'App',
     metaInfo: {
-      title: 'App',
-      titleTemplate: '%s | Zero Pro',
+      title: 'Toming d.o.o.',
+      titleTemplate: '%s | Toming d.o.o.',
       htmlAttrs: { lang: 'en' },
       meta: [
         { charset: 'utf-8' },

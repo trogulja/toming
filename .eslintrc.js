@@ -19,6 +19,11 @@ module.exports = {
     indent: 'off',
     //
     'no-unused-vars': 'warn',
+    'vue/max-attributes-per-line': 'off',
+    'vue/html-closing-bracket-newline': 'off',
+    'vue/script-indent': 'off',
+    'space-before-function-paren': 'off',
+    semi: 'off',
   },
 
   overrides: [
@@ -32,4 +37,4 @@ module.exports = {
       },
     },
   ],
-}
+};
