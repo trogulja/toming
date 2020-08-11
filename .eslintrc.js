@@ -21,6 +21,8 @@ module.exports = {
     'no-unused-vars': 'warn',
     'vue/max-attributes-per-line': 'off',
     'vue/html-closing-bracket-newline': 'off',
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/multiline-html-element-content-newline': 'off',
     'vue/script-indent': 'off',
     'space-before-function-paren': 'off',
     semi: 'off',

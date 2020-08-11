@@ -47,18 +47,18 @@
       business: [
         {
           icon: 'mdi-map-marker-outline',
-          title: 'Address',
-          text: '8553 N. Beach St. Ste. 227<br>Fort Worth, Texas 76137',
+          title: 'Adresa',
+          text: 'Trg Petra Svačića 11<br>10000 Zagreb',
         },
         {
           icon: 'mdi-cellphone',
-          title: 'Phone',
-          text: '01 (800) 433 744<br>01 (800) 433 633',
+          title: 'Telefon',
+          text: '++385 (98) 536 041<br>++385 (1) 48 56 554',
         },
         {
           icon: 'mdi-email',
           title: 'Email',
-          text: 'john@vuetifyjs.com<br>heather@vuetifyjs.com',
+          text: 'toming@zg.t-com.hr',
         },
       ],
     }),

@@ -29,6 +29,7 @@
           <base-title
             :title="title"
             class="text-uppercase"
+            :class="colortext ? `${colortext}--text` : ''"
             space="1"
           />
 
@@ -37,6 +38,7 @@
           <base-body
             v-if="text || $slots.default"
             :text="text"
+            :class="colortext ? `${colortext}--text` : ''"
             space="6"
           >
             <slot />
@@ -73,6 +75,7 @@
         type: String,
         default: 'primary',
       },
+      colortext: String,
       icon: String,
       subtitle: String,
       text: String,

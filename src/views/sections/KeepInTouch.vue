@@ -1,24 +1,15 @@
 <template>
-  <base-section
-    id="info-alt"
-    space="56"
-  >
+  <base-section id="info-alt" space="56">
     <v-container>
       <v-row justify="space-between">
-        <v-col
-          cols="12"
-          md="5"
-        >
-          <base-business-info title="KEEP IN TOUCH WITH US">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo pariatur quidem, quis modi iure nihil commodi suscipit, corporis dicta adipisci, voluptatum quia cupiditate.
+        <v-col cols="12" md="5">
+          <base-business-info title="KONTAKT PODACI">
+            Trgovačko društvo Toming d.o.o. osnovano je 10. prosinca 1992 godine, upisano u registru Trgovačkog suda Zagreb Mat. br. subjekta upisa (080026577), MB: 0180971, OIB: 44990644803
           </base-business-info>
         </v-col>
 
-        <v-col
-          cols="12"
-          md="6"
-        >
-          <base-contact-form title="MAIL US YOUR MESSAGE" />
+        <v-col cols="12" md="6">
+          <base-contact-form title="POŠALJITE NAM PORUKU" />
         </v-col>
       </v-row>
     </v-container>
@@ -26,7 +17,7 @@
 </template>
 
 <script>
-  export default {
-    name: 'SectionKeepInTouch',
-  }
+export default {
+  name: 'SectionKeepInTouch',
+};
 </script>

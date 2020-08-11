@@ -1,11 +1,10 @@
 <template>
-  <base-info-card title="Features">
+  <base-info-card title="Usluge">
     <a
       v-for="feature in features"
       :key="feature"
       :text="feature"
-      class="mb-8 grey--text body-1 d-block text-none"
-      href="#"
+      class="mb-2 grey--text body-1 d-block text-none"
       v-html="`&rsaquo; ${feature}`"
     />
   </base-info-card>
@@ -17,11 +16,16 @@
 
     data: () => ({
       features: [
-        'Zero Installation',
-        'Easy Customization',
-        'User Friendly Design',
-        '24/7 Support Desk',
-        'SEO Optimized',
+        'Adaptacije stambenih prostora',
+        'Adaptacije poslovnih prostora',
+        'Uređenje lokala u novogradnji',
+        'Građevinski radovi',
+        'Instalaterski radovi',
+        'Završni radovi',
+        'Računovodstva za mala društva',
+        'Iznajmljivanje kamp opreme',
+        'Iznajmljivanje kamp prikolica i autokampera',
+        'Prodaja novih i rabljenih dijelova za kamp prikolice i autokampere',
       ],
     }),
   }

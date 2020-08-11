@@ -1,26 +1,10 @@
 <template>
-  <base-section
-    id="features"
-    class="secondary"
-  >
-    <v-responsive
-      class="mx-auto"
-      max-width="1350"
-    >
+  <base-section id="features" class="shade">
+    <v-responsive class="mx-auto" max-width="1350">
       <v-container fluid>
         <v-row>
-          <v-col
-            v-for="card in cards"
-            :key="card.title"
-            cols="12"
-            sm="4"
-            md="3"
-          >
-            <base-info-card
-              align="center"
-              dark
-              v-bind="card"
-            />
+          <v-col v-for="card in cards" :key="card.title" cols="12" sm="4" md="3">
+            <base-info-card align="center" v-bind="card" />
           </v-col>
         </v-row>
       </v-container>
@@ -29,32 +13,40 @@
 </template>
 
 <script>
-  export default {
-    name: 'SectionFeatures',
+export default {
+  name: 'SectionFeatures',
 
-    data: () => ({
-      cards: [
-        {
-          icon: 'mdi-keyboard-outline',
-          title: 'Trendy Design',
-          text: 'Efficiently unleash media information without cross-media value. Quickly maximize value timely deliverables schemas.',
-        },
-        {
-          icon: 'mdi-camera-outline',
-          title: 'Photography',
-          text: 'Efficiently unleash media information without cross-media value. Quickly maximize value timely deliverables schemas.',
-        },
-        {
-          icon: 'mdi-pencil-outline',
-          title: 'Brand Making',
-          text: 'Efficiently unleash media information without cross-media value. Quickly maximize value timely deliverables schemas.',
-        },
-        {
-          icon: 'mdi-puzzle-outline',
-          title: '24/7 Support',
-          text: 'Efficiently unleash media information without cross-media value. Quickly maximize value timely deliverables schemas.',
-        },
-      ],
-    }),
-  }
+  data: () => ({
+    cards: [
+      {
+        icon: 'mdi-hammer-screwdriver',
+        color: 'accent',
+        colortext: 'shadeDark',
+        title: 'Adaptacije i Uređenja',
+        text: 'Adaptacije stambenih i poslovnih prostora, uređenje lokala u gradnji',
+      },
+      {
+        icon: 'mdi-account-hard-hat',
+        color: 'accent',
+        colortext: 'shadeDark',
+        title: 'Završni radovi',
+        text: 'Sve vrste građevinskih, instalaterskih i završnih radova',
+      },
+      {
+        icon: 'mdi-account-cash-outline',
+        color: 'accent',
+        colortext: 'shadeDark',
+        title: 'Računovodstvo',
+        text: 'Računovodstva za mala društva.',
+      },
+      {
+        icon: 'mdi-rv-truck',
+        color: 'accent',
+        colortext: 'shadeDark',
+        title: 'Kamp oprema',
+        text: 'Iznajmljivanje i prodaja kamp opreme, kamp prikolica i autokampera.',
+      },
+    ],
+  }),
+};
 </script>

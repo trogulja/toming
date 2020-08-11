@@ -1,38 +1,24 @@
-
 <script>
-  // Extensions
-  import View from '@/views/View'
+// Extensions
+import View from '@/views/View';
 
-  // Mixins
-  import LoadSections from '@/mixins/load-sections'
+// Mixins
+import LoadSections from '@/mixins/load-sections';
 
-  export default {
-    name: 'Home',
+export default {
+  name: 'Home',
 
-    metaInfo: { title: 'Home' },
+  metaInfo: { title: 'Home' },
 
-    extends: View,
+  extends: View,
 
-    mixins: [
-      LoadSections([
-        'hero',
-        'theme-features',
-        'features',
-        'contact-us',
-        'affiliates',
-        'social-media',
-        'keep-in-touch',
-        'newsletter',
-        'pro-features',
-        'info',
-      ]),
-    ],
+  mixins: [LoadSections(['hero', 'features', 'keep-in-touch', 'map', 'info'])],
 
-    props: {
-      id: {
-        type: String,
-        default: 'home',
-      },
+  props: {
+    id: {
+      type: String,
+      default: 'home',
     },
-  }
+  },
+};
 </script>
