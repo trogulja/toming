@@ -6,7 +6,7 @@ Vue.use(Router)
 
 const router = new Router({
   mode: 'history',
-  base: process.env.BASE_URL,
+  base: location.hostname === 'rogulja.info' ? '/projects/toming/' : process.env.BASE_URL,
   scrollBehavior: (to, from, savedPosition) => {
     if (to.hash) return { selector: to.hash }
     if (savedPosition) return savedPosition
@@ -15,7 +15,7 @@ const router = new Router({
   },
   routes: [
     {
-      path: './',
+      path: '/',
       component: () => import('@/layouts/home/Index.vue'),
       children: [
         {
