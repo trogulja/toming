@@ -6,7 +6,7 @@ Vue.use(Router)
 
 const router = new Router({
   mode: 'history',
-  base: '/projects/toming/',
+  base: process.env.BASE_URL,
   scrollBehavior: (to, from, savedPosition) => {
     if (to.hash) return { selector: to.hash }
     if (savedPosition) return savedPosition

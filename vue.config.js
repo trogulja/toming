@@ -7,7 +7,5 @@ module.exports = {
     disableHostCheck: true
   },
 
-  publicPath: '/projects/toming/',
-
   transpileDependencies: ["vuetify"]
 };
