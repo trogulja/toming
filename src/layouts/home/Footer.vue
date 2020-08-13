@@ -5,7 +5,7 @@
         <v-col cols="12" md="6">
           <div class="d-flex flex-wrap justify-md-start justify-center justify-md-none">
             <template v-for="(s, i) in social">
-              <a :key="s" class="white--text pa-1 pa-md-0" href="#" v-text="s" />
+              <div :key="s" class="grey--text pa-1 pa-md-0" v-text="s" />
 
               <v-responsive v-if="i < social.length - 1" :key="`divider-${s}`" class="mx-4 shrink hidden-sm-and-down" max-height="24">
                 <v-divider vertical />
@@ -15,7 +15,7 @@
         </v-col>
 
         <v-col class="text-center text-md-right" cols="12" md="6">
-          Copyright &copy; 2020 Vuetify, LLC
+          Copyright &copy; {{ year }} Toming d.o.o.
         </v-col>
       </v-row>
     </v-container>
@@ -27,8 +27,14 @@ export default {
   name: 'HomeFooter',
 
   data: () => ({
-    social: ['Facebook', 'Twitter', 'Instagram', 'Linkedin'],
+    social: ['MB 0180971', 'OIB 44990644803', 'IBAN HR0823600001101214939'],
   }),
+
+  computed: {
+    year() {
+      return new Date().getFullYear();
+    },
+  },
 };
 </script>
 

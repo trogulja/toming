@@ -12,7 +12,7 @@ export default {
 
   extends: View,
 
-  mixins: [LoadSections(['hero', 'features', 'keep-in-touch', 'map', 'info'])],
+  mixins: [LoadSections(['hero', 'usluge', 'kako-radimo', 'kamping', 'kontakt', 'map', 'info'])],
 
   props: {
     id: {
