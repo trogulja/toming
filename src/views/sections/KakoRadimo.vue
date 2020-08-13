@@ -8,7 +8,13 @@
       <v-row>
         <v-col v-for="(image, i) in randomImages" :key="i" cols="6" sm="3" md="2" class="d-flex child-flex">
           <v-card flat tile class="d-flex">
-            <v-img ratio="1" :src="image.src" @click="showSingle(image.i)" />
+            <v-img aspect-ratio="1" class="grey lighten-2" :src="image.src" @click="showSingle(image.i)">
+              <template v-slot:placeholder>
+                <v-row class="fill-height ma-0" align="center" justify="center">
+                  <v-progress-circular indeterminate color="grey lighten-5" />
+                </v-row>
+              </template>
+            </v-img>
           </v-card>
         </v-col>
       </v-row>
