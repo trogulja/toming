@@ -5,3 +5,4 @@ import './meta';
 import './webfontloader';
 import './vueeasylightbox';
 import './vueawesomeswiper';
+import './vuescrollto';

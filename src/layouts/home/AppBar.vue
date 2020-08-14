@@ -32,17 +32,23 @@
       <v-spacer />
 
       <div>
-        <v-tabs class="hidden-sm-and-down" background-color="transparent" optional>
-          <v-tab v-for="(name, i) in items" :key="i" :to="{ name }" :exact="name === 'Home'" active-class="text--primary" class="font-weight-bold" min-width="96" text>{{
-            name
-          }}</v-tab>
+        <v-tabs v-model="tab" class="hidden-sm-and-down" background-color="transparent" optional>
+          <v-tab
+            v-for="(anchor, i) in anchors"
+            :key="i"
+            v-scroll-to="{ el: anchor.id, onStart: scrollingStart, onDone: scrollingEnd, onCancel: scrollingEnd, offset: anchor.name === 'Toming' ? -120 : 0 }"
+            active-class="text--primary"
+            class="font-weight-bold"
+            min-width="96"
+            text
+          >{{ anchor.name }}</v-tab>
         </v-tabs>
       </div>
 
       <v-app-bar-nav-icon class="hidden-md-and-up" @click="drawer = !drawer" />
     </v-app-bar>
 
-    <home-drawer v-model="drawer" :items="items" />
+    <home-drawer v-model="drawer" :items="anchors" @moveStart="scrollingStart" @moveEnd="scrollingEnd" />
   </div>
 </template>
 
@@ -56,15 +62,18 @@ export default {
 
   data: () => ({
     drawer: null,
-    items: ['Home', 'About', 'Contact', 'Pro'],
+    tab: 0,
+    navigating: false,
+    anchors: [
+      { view: false, name: 'Toming', id: '#hero' },
+      { view: false, name: 'Usluge', id: '#usluge' },
+      { view: false, name: 'Kamping', id: '#kamping' },
+      { view: false, name: 'Kontakt', id: '#kontakt' },
+    ],
   }),
 
   mounted() {
     this.animateLogo(true);
-    // setTimeout(() => {
-    //   const wrapper = document.querySelector('#logo_wrapper svg')
-    //   wrapper.classList.add('active')
-    // }, 1000);
 
     this.observer = new MutationObserver(mutations => {
       for (const m of mutations) {
@@ -80,6 +89,51 @@ export default {
       attributeOldValue: true,
       attributeFilter: ['class'],
     });
+
+    // utility functions
+    function createObserver(el) {
+      const options = { root: null, rootMargin: '0px' };
+      const observer = new IntersectionObserver(handleIntersect, options);
+      observer.observe(el);
+    }
+
+    function handleIntersect(entries, observer) {
+      entries.forEach(entry => {
+        lista[entry.target.id].active = entry.isIntersecting;
+        handleVisibility();
+      });
+    }
+
+    function handleVisibility() {
+      if (vm.navigating) return;
+      const skup = [];
+      Object.keys(lista).forEach(key => {
+        if (lista[key].active) skup.push(lista[key].i)
+      })
+      if (skup.length) {
+        skup.sort((a, b) => a - b);
+        vm.tab = skup[0];
+      }
+    }
+
+    // Figure out what is in view
+    const lista = {};
+    const vm = this;
+
+    this.anchors.forEach((item, i) => {
+      lista[item.id.substring(1)] = { name: item.name, i: i, active: false };
+      window.addEventListener(
+        'load',
+        event => {
+          createObserver(document.querySelector(item.id));
+        },
+        false
+      );
+    });
+
+    setTimeout(() => {
+      handleVisibility();
+    }, 500);
   },
 
   beforeDestroy() {
@@ -108,6 +162,14 @@ export default {
           if (wrapper.classList.contains('active')) wrapper.classList.remove('active')
         }, 300);
       }
+    },
+    scrollingStart: function() {
+      this.navigating = true;
+      if (this.drawer) this.drawer = false;
+    },
+    scrollingEnd: function() {
+      this.navigating = false;
+      if (this.drawer) this.drawer = false;
     },
   },
 };

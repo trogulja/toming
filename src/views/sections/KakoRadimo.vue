@@ -19,7 +19,7 @@
         </v-col>
       </v-row>
     </v-container>
-    <vue-easy-lightbox :visible="visible" :imgs="images" :index="index" @hide="handleHide" />
+    <vue-easy-lightbox move-disabled :visible="visible" :imgs="images" :index="index" @hide="handleHide" />
   </base-section>
 </template>
 
