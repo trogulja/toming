@@ -10,7 +10,7 @@
           </base-body>
 
           <div :class="$vuetify.breakpoint.smAndDown ? 'flex-column align-start' : 'align-center'" class="d-flex flex-wrap">
-            <base-btn>Kontaktirajte nas</base-btn>
+            <base-btn v-scroll-to="'#kontakt'">Kontaktirajte nas</base-btn>
           </div>
         </v-responsive>
       </v-container>
